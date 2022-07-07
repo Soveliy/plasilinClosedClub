@@ -29,7 +29,7 @@ gulp.task('scss', function(){
 gulp.task('css', function(){
   return gulp.src([
     'node_modules/normalize.css/normalize.css',
-    // 'assest/css/ion.rangeSlider.css',
+    'assest/css/liMarquee.css',
     //  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
    
     // 'node_modules/jquery-nice-select/css/nice-select.css',
@@ -67,10 +67,10 @@ gulp.task('js', function(){
       //   'node_modules/fast-average-color/dist/index.min.js',
       //   'assest/js/simple-scrollbar.js',
       //   'assest/js/ion.rangeSlider.js',
-      //   'assest/js/jquery.arcticmodal.js',
+        'assest/js/jquery.arcticmodal.js',
         'assest/js/jquery.mask.min.js',
       
-    // 'assest/js/aos.js',
+    'assest/js/jquery.liMarquee.js',
     // 'assest/js/swiper.js',
         // 'node_modules/swiper/swiper-bundle.min.js',
     // 'assest/js/jquery.simplemarquee.js',

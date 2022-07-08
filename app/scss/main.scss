@@ -231,11 +231,20 @@ button{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  &__form{
+    max-width: 620px;
+    width: 100%;
+    margin-top: 14px;
+  }
   &__desc{
     font-size: 22px;
     line-height: 34px;
     max-width: 748px;
     padding-top: 13px;
+
+    &--white{
+      color: $white;
+    }
 
     a{
       color: $orange;
@@ -362,27 +371,69 @@ button{
     flex-shrink: 0;
   }
   &__list{
-    margin-top: 83px;
+    margin-top: 47px;
 
   }
   &-item{
+    padding: 37px 100px 37px 0;
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: 1px solid $black;
+    
     &__title{
       font-size: 40px;
       line-height: 36px;
       font-weight: 300;
+    
     }
     &__desc{
       font-size: 16px;
       line-height: 22px;
+      margin-top: 18px;
+    }
+    &__image-container{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100px;
+      width: 92px;
+    }
+    &__body{
+      display: none;
     }
   }
 }
+.profit{
+  background-color: $orange;
+  padding: 114px 0;
+
+  .section-head__title{
+    max-width: 725px;
+  }
+  &__common{
+    margin-top: 22px;
+  }
+  &__bowling{
+    // padding-top: 163px;
+    margin-top: -24px;
+  }
+}
 .common-item{
+  display: flex;
+  flex-direction: column;
   background-color: $white;
   padding: 23px 30px;
   box-sizing: border-box;
   min-height: 377px;
-
+  &:hover{
+    .common-item__price-icon-container{
+      top: 15px;
+    }
+  }
+  &--big{
+    min-height: 392px;
+    padding-bottom: 34px;
+  }
   &--orange{
     background-color: $orange;
     color: $white;
@@ -398,5 +449,291 @@ button{
   }
   &__desc{
     line-height: 22px;
+  }
+  &__price{
+    position: relative;
+    font-size: 55px;
+    line-height: 30px;
+    color: $green;
+    font-weight: 300;
+    padding-top: 74px;
+    margin-top: auto;
+    &-icon-container{
+      position: absolute;
+      left: -9px;
+      top: 0;
+      height: 40px;
+      width: 43px;
+      transition:linear .3s;
+    }
+   
+    svg{
+      height: 100%;
+      width: 100%;
+      fill: #83B752;
+     
+      transform: rotate(90deg);
+    }
+  }
+  &__option{
+    & + &{
+      margin-top: 21px;
+    }
+    &-title{
+      color: #7E8292;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    &-value{
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}
+
+.bowling{
+  position: relative;
+  overflow: hidden;
+  &__ball{
+    position: absolute;
+    bottom: 0;
+    left: -54px;
+  }
+  &__row{
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__items{
+    position: relative;
+    background-color: $blue;
+    width: 756px;
+    height: 756px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 45px;
+    box-sizing: border-box;
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 252px;
+      width: 252px;
+      background-color: $orange;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      height: 252px;
+      width: 252px;
+      background-color: $green;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+    
+  &__item{
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+
+    &--1{
+      z-index: 20;
+    }
+    &--2{
+      margin-left: -59px;
+    }
+    &--3{
+      margin-left: -39px;
+    }
+    &--4{
+      z-index: 20;
+      margin-left:-62px;
+    }
+    &--5{
+      margin-left:-63px;
+    }
+  }
+}
+.footer{
+  background-color: $black;
+  padding-top: 128px;
+  &__bottom{
+    margin-top: 120px;
+    border-top: 2px solid $white;
+    padding: 35px 0;
+    &-row{
+      align-items: center;
+    }
+  }
+  &__copy{
+    font-size: 14px;
+    line-height: 17px;
+    color: #7E8292;
+    margin-right: 40px;
+  }
+  &__policy{
+    color: $orange;
+  }
+  &__develop{
+    margin-left: auto;
+  }
+  &__items{
+    margin-top: 53px;
+  }
+  &__item{
+    &-link{
+      color: $white;
+      font-size: 44px;
+      line-height: 47px;
+      transition: .3s;
+      font-weight: 300;
+      &:hover{
+        color: $orange;
+      }
+    }
+    &-desc{
+      color: #7E8292;
+      font-size: 18px;
+      line-height: 21px;
+    }
+    & + &{
+      
+    }
+  }
+  &__social{
+    margin-top: 55px;
+  }
+ 
+}
+.social{
+  &__list{
+    display: flex;
+  }
+  &__item{
+    display: flex;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($white, .2);
+
+    & + &{
+      margin-left: 10px;
+    }
+
+    svg{
+      display: block;
+      max-width: 22px;
+      fill: $white;
+      max-height: 100%;
+    }
+  }
+}
+.develop{
+  display: flex;
+  align-items: center;
+  &__title{
+    font-size: 14px;
+    line-height: 17px;
+    color: #7E8292;
+    margin-right: 17px;
+    white-space: nowrap;
+  }
+}
+.form{
+  &__title{
+    color: $white;
+    font-size: 22px;
+    line-height: 30px;
+    color: $white;
+    margin-bottom: 32px;
+  }
+  &__item{
+    position: relative;
+
+    & + &{
+      margin-top: 20px;
+    }
+  }
+  &__input{
+    position: relative;
+    z-index: 5;
+    height: 80px;
+    display: block;
+    width: 100%;
+    border: 2px solid rgba($white,.2);
+    transition: linear .3s;
+    background-color: transparent;
+    box-sizing: border-box;
+
+    &:focus,&:not(:placeholder-shown){
+      ~ .form__label{
+        font-size: 12px;
+        top: -10px;
+        background-color: $black;
+        z-index: 10;
+      
+
+      }
+    }
+    &:focus{
+      border-color: $white;
+      border-bottom-color: $orange;
+    }
+  }
+  &__label{
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    color: $white;
+    font-size: 16px;
+    line-height: 22px;
+    color: $white;
+    transition: .3s linear;
+    padding: 0 10px;
+    &-req{
+      color: $orange;
+    }
+  }
+  &__checkbox{
+    margin: 40px 0;
+  }
+  &__button{
+    display: block;
+    height: 81px;
+    width: 100%;
+  }
+  
+}
+.checkbox{
+  &__container{
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding-left: 40px;
+
+  }
+  &__icon{
+    position: absolute;
+    left: 0;
+    top: -1px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgba($white, .2);
+  }
+  &__text{
+    color: $white;
+    a{
+      color: $orange;
+    }
+  }
+  input:checked + .checkbox__container{
+    .checkbox__icon{
+      border-color: $orange;
+      background-color: $orange;
+    }
   }
 }

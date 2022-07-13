@@ -81,10 +81,18 @@ img{
   max-width: 1515px;
   margin: 0 auto;
   width: 96%;
-  @include for-desk(){
-    width: 100%;
+  // @include for-desk(){
+  //   width: 100%;
+  //   box-sizing: border-box;
+  //   padding: 0 15px;
+  // }
+  @include for-md(){
+    padding: 0 20px 0 98px;
     box-sizing: border-box;
-    padding: 0 15px;
+    width: 100%;
+  }
+  @include for-sm(){
+    padding: 0 10px;
   }
 }
 .row{
@@ -100,6 +108,7 @@ button{
   border: none;
 }
 .button{
+  position: relative;
   cursor: pointer;
   transition: .3s;
   font-size: 14px;
@@ -109,29 +118,94 @@ button{
   color: $white;
   transition: .3s;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &--orange{
     font-size: 14px;
     letter-spacing: 0.56px;
     background-color: #E55030;
+    span{
+      position: relative;
+      z-index: 10;
+    }
+    &:hover{
+      &::before{
+        width: 100%;
+      
+        left: 0;
+      }
+      &:after{
+        width: 100%;
+        opacity: 1;
+        
+      }
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      left: 50%;
+      height: 100%;
+      width: 0;
+      background-color: #E6340D;
+
+  
+      transition:linear .3s;
+      z-index: 10;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 0;
+      background-color: #1C398E;
+      transition:linear .3s;
+      opacity: 0;
+
+    }
+  }
+  &--white{
+    color: #03050C;
+    letter-spacing: 0.56px;
+    background-color: $white;
   }
 
 }
 
 .header{
+  @include for-md(){
+    padding-top: 19px;
+  }
   &__number{
     font-size:22px;
     margin: 0 70px 0 auto;
     &:hover{
       color: $orange;
     }
+    @include for-md(){
+      margin: 0 0 0 auto;
+    }
+    @include for-sm(){
+      display: none;
+    }
   }
   &__button{
       padding: 32px 30px;
       max-width: 363px;
       width: 100%;
+      @include for-md(){
+        display: none;
+      }
   }
   &__logo{
     width: 187px;
+    @include for-md(){
+      width: 141px;
+    }
+    @include for-sm(){
+      width: 118px;
+    }
   }
   &__burger{
     position: fixed;
@@ -139,6 +213,14 @@ button{
     top: 32px;
     z-index: 500;
     cursor: pointer;
+    @include for-md(){
+      left: 20px;
+      top: 26px;
+    }
+    @include for-sm(){
+      left: auto;
+      right: 10px;
+    }
   }
 }
 
@@ -196,20 +278,38 @@ button{
   position: relative;
 
 
-
+  @include for-md(){
+    padding: 88px 0 42px;
+  }
+  @include for-sm(){
+    padding: 85px 0 42px;
+  }
   &__row{
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 23px;
+    @include for-md(){
+      margin-top: 9px;
+      flex-direction: column;
+    }
+    @include for-sm(){
+      margin-top: 0;
+    }
   }
   &__desc{
     max-width: 363px;
     margin-top: -10px;
+    @include for-md(){
+      margin-top: 0;
+    }
 
-    P{
+    p{
       font-size: 22px;
       line-height: 34px;
       margin: 0 0 29px 0;
+      @include for-md(){
+        margin: 0 0 27px 0;
+      }
     }
   }
   &__picture-container{
@@ -219,10 +319,25 @@ button{
     height: 504px;
     background-image: url(../images/background.jpg);
     background-size: cover;
+    @include for-md(){
+      margin-top: 34px;
+      width: 100%;
+      height: 326px;
+    }
+    @include for-sm(){
+      height: 152px;
+    }
 
     img{
       margin: 7px 0 0 -56px;
       transition: linear .6s;
+      @include for-md(){
+        margin: 5px 0 0 -49px;
+      }
+      @include for-sm(){
+        margin: 0px 0 0 -18px;
+        max-width: 92%;
+      }
     }
 
     &:hover{
@@ -239,16 +354,30 @@ button{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  @include for-md(){
+    padding: 23px 0;
+    flex-direction: column;
+  }
+  @include for-sm(){
+    padding: 32px 0;
+  }
   &__form{
     max-width: 620px;
     width: 100%;
     margin-top: 14px;
+    @include for-md(){
+      margin-top: 38px;
+      max-width: 100%;
+    }
   }
   &__desc{
     font-size: 22px;
     line-height: 34px;
     max-width: 748px;
     padding-top: 13px;
+    @include for-md(){
+      padding-top: 34px;
+    }
 
     &--white{
       color: $white;
@@ -282,6 +411,12 @@ button{
       font-family: $roboto;
       padding-bottom: 25px;
       width: 100%;
+      @include for-md(){
+        font-size: 30px;
+        line-height: 36px;
+        padding-bottom: 31px;
+      }
+     
       span{
         font-family: $Xolonium;
        font-size: 124px;
@@ -290,6 +425,18 @@ button{
        
       margin-bottom: -9px;
       display: block;
+      @include for-md(){
+        letter-spacing: 2.01px;
+        font-size: 53px;
+        line-height: 69px;
+        margin-bottom: 12px;
+      }
+      @include for-sm(){
+        font-size: 24px;
+        line-height: 31px;
+        letter-spacing: 0.91px;
+        margin-bottom: 2px;
+      }
 
       }
     }
@@ -300,6 +447,18 @@ button{
       letter-spacing: 2.28px;
       max-width: 565px;
       padding-bottom: 20px;
+      @include for-md(){
+        letter-spacing: 2.01px;
+        font-size: 53px;
+        line-height: 70px;
+      }
+      @include for-sm(){
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.91px;
+        max-width: 230px;
+        padding-bottom: 32px;
+      }
     }
   }
 }
@@ -307,14 +466,68 @@ button{
 .privilege{
   padding: 106px 0 119px;
   background-color: $orange;
+  position: relative;
+  overflow: hidden;
   &__common{
     margin-top: 23px;
+    @include for-md(){
+      margin-top: 19px;
+    }
+    @include for-sm(){
+      margin-top: 8px;
+    }
+  }
+  @include for-md(){
+    padding: 40px 0;
   }
 }
 .who-can{
+  position: relative;
+  overflow: hidden;
   padding: 120px 0 120px;
+  &:hover{
+    .who-can__image{
+      transform: rotate(0deg);
+    }
+  }
+  @include for-md(){
+    padding: 40px 0 349px;
+  }
+  @include for-sm(){
+    padding: 40px 0 282px;
+  }
   &__common{
     margin-top: 25px;
+    @include for-md(){
+      margin-top: 10px;
+    }
+  }
+  .common-item{
+    @include for-sm(){
+      min-height: 354px;
+    }
+  }
+  &__image{
+    position: absolute;
+    right: -301px;
+    top: 233px;
+    transform: rotate(11deg);
+    transition: linear .6s;
+    
+    @include for-md(){
+      top: auto;
+      bottom: -73px;
+      z-index: 50;
+      max-width: 74%;
+      right: -131px;
+      transform: rotate(-13deg);
+    }
+    @include for-sm(){
+      max-width: 100%;
+      bottom: 3px;
+      right: -59px;
+    }
+   
   }
 }
 .marquee{
@@ -347,10 +560,16 @@ button{
   }
 }
 .common{
+ 
   &__row{
     display: flex;
     flex-wrap: wrap;
     margin: -1px;
+    position: relative;
+  
+    @include for-md(){
+      flex-wrap: nowrap;
+    }
   }
 
   &__col{
@@ -370,16 +589,36 @@ button{
    &--4-4{
     width: 100%;
    }
+   &--empty{
+    @include for-md(){
+      display: none;
+    }
+    
+   }
+   @include for-md(){
+    width: 377px;
+   }
+   @include for-sm(){
+    width: 260px;
+    min-height: 318px;
+   }
   }
 }
 .services{
   padding: 120px 0;
+  @include for-md(){
+    padding: 45px 0 39px;
+  }
   .section-head__title{
     max-width: 603px;
     flex-shrink: 0;
   }
   &__list{
     margin-top: 47px;
+    @include for-md(){
+      border-top: 1px solid $black;
+      margin-top: 8px;
+    }
 
   }
   &-item{
@@ -387,11 +626,29 @@ button{
     box-sizing: border-box;
     position: relative;
     border-bottom: 1px solid $black;
+    @include for-md(){
+      padding: 35px 0 32px;
+    }
     
     &__title{
       font-size: 40px;
-      line-height: 36px;
+      line-height: 43px;
       font-weight: 300;
+      position: relative;
+      &:after{
+      @include for-md(){
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -21px;
+        height: 17px;
+        width: 17px;
+        border-bottom: 1px solid $orange;
+        border-right: 1px solid $orange;
+        box-sizing: border-box;
+        border-bottom-right-radius: 3px;
+      }
+      }
     
     }
     &__desc{
@@ -412,18 +669,37 @@ button{
   }
 }
 .profit{
+   position: relative;
+  overflow: hidden;
   background-color: $orange;
   padding: 114px 0;
+  @include for-md(){
+    padding: 40px 0;
+  }
 
   .section-head__title{
     max-width: 725px;
   }
   &__common{
     margin-top: 22px;
+    @include for-md(){
+      margin-top: 2px;
+    }
   }
   &__bowling{
     // padding-top: 163px;
     margin-top: -24px;
+    @include for-md(){
+      margin-top: 146px;
+    }
+    @include for-sm(){
+      margin-top: 70px;
+    }
+  }
+  @include for-sm(){
+    .common-item{
+      min-height: 423px;
+    }
   }
 }
 .common-item{
@@ -433,6 +709,10 @@ button{
   padding: 23px 30px;
   box-sizing: border-box;
   min-height: 377px;
+  @include for-sm(){
+    min-height: 318px;
+    padding: 23px 20px;
+  }
   &:hover{
     .common-item__price-icon-container{
       top: 15px;
@@ -466,6 +746,10 @@ button{
     font-weight: 300;
     padding-top: 74px;
     margin-top: auto;
+    @include for-sm(){
+      font-size:45px;
+      line-height:50px;
+    }
     &-icon-container{
       position: absolute;
       left: -9px;
@@ -473,6 +757,9 @@ button{
       height: 40px;
       width: 43px;
       transition:linear .3s;
+      @include for-sm(){
+        top: 21px;
+      }
     }
    
     svg{
@@ -506,6 +793,14 @@ button{
     position: absolute;
     bottom: 0;
     left: -54px;
+    @include for-md(){
+      left: -31px;
+      width: 162px;
+    }
+    @include for-sm(){
+      left: -65px;
+      width: 104px;
+    }
   }
   &__row{
     display: flex;
@@ -520,6 +815,16 @@ button{
     align-items: flex-end;
     padding-left: 45px;
     box-sizing: border-box;
+    @include for-md(){
+      width: 378px;
+      height: 378px;
+      padding-left: 25px;
+    }
+    @include for-sm(){
+      width: 252px;
+      height: 252px;
+      padding-left: 6px;
+    }
     &:before{
       content: '';
       position: absolute;
@@ -528,6 +833,14 @@ button{
       height: 252px;
       width: 252px;
       background-color: $orange;
+      @include for-md(){
+        width: 126px;
+        height: 126px;
+      }
+      @include for-sm(){
+        height: 86px;
+        width: 86px;
+      }
     }
     &::after{
       content: '';
@@ -538,6 +851,14 @@ button{
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
+      @include for-md(){
+        width: 126px;
+        height: 126px;
+      }
+      @include for-sm(){
+        height: 86px;
+        width: 86px;
+      }
     }
   }
     
@@ -545,34 +866,90 @@ button{
     position: relative;
     z-index: 10;
     flex-shrink: 0;
+    @include for-md(){
+      width: 27.2%;
+    }
 
     &--1{
       z-index: 20;
+      @include for-sm(){
+        width: 26.2%;
+      }
     }
     &--2{
       margin-left: -59px;
+      @include for-md(){
+        width: 25%;
+        margin-left: -32px;
+      }
+      @include for-sm(){
+        width: 23.8%;
+        margin-left: -20px;
+      }
     }
     &--3{
       margin-left: -39px;
+      @include for-md(){
+        margin-left: -17px;
+      }
+      @include for-sm(){
+        margin-left: -14px;
+        width: 26.2%;
+      }
     }
     &--4{
       z-index: 20;
       margin-left:-62px;
+      @include for-md(){
+        margin-left: -31px;
+        width: 24.8%;
+      }
+      @include for-sm(){
+        margin-left: -14px;
+        width: 23.8%;
+      }
     }
     &--5{
       margin-left:-63px;
+      @include for-md(){
+        margin-left: -34px;
+        width: 25%;
+      }
+      @include for-sm(){
+        margin-left: -18px;
+        width: 24%;
+      }
     }
   }
 }
 .footer{
   background-color: $black;
   padding-top: 128px;
+  @include for-md(){
+    padding-top: 119px;
+  }
+  @include for-sm(){
+    padding-top: 42px;
+  }
   &__bottom{
     margin-top: 96px;
     border-top: 2px solid $white;
     padding: 35px 0;
+    @include for-md(){
+      margin-top: 40px;
+    }
+    @include for-sm(){
+      margin: 40px 10px 0;
+      padding-bottom: 75px;
+     .container{
+      padding: 0;
+     }
+    }
     &-row{
       align-items: center;
+      @include for-md(){
+        flex-wrap: wrap;
+      }
     }
   }
   &__copy{
@@ -580,6 +957,11 @@ button{
     line-height: 17px;
     color: #7E8292;
     margin-right: 40px;
+    @include for-sm(){
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 34px;
+    }
   }
   &__policy{
     color: $orange;
@@ -588,9 +970,16 @@ button{
   }
   &__develop{
     margin-left: auto;
+    @include for-md(){
+      width: 100%;
+      margin-top: 34px;
+    }
   }
   &__items{
     margin-top: 53px;
+    @include for-md(){
+      margin-top: 0;
+    }
   }
   &__item{
     &-link{
@@ -602,19 +991,56 @@ button{
       &:hover{
         color: $orange;
       }
+      @include for-sm(){
+        font-size: 26px;
+        line-height: 30px;
+      }
     }
     &-desc{
       color: #7E8292;
       font-size: 18px;
       line-height: 21px;
-      margin-top:20px
+      margin-top:20px;
+      @include for-sm(){
+        margin-top: 12px;
+      }
     }
     & + &{
-      margin-top:50px
+      margin-top:50px;
+      @include for-md(){
+        margin-top: 28px;
+      }
     }
   }
   &__social{
     margin-top: 55px;
+    @include for-md(){
+      margin-top: 35px;
+    }
+    @include for-sm(){
+      margin-top: 30px;
+    }
+  }
+  &__desktop{
+    @include for-md(){
+      display: none;
+    }
+  }
+  &__mobile{
+
+    display: none;
+    @include for-md(){
+      display: block;
+      margin: 17px -20px 0 -98px;
+      padding:33px 20px 0 98px;
+      box-sizing: border-box;
+      border-top: 2px solid $white;
+    }
+    @include for-sm(){
+      margin: 8px 0 0 0;
+      padding: 34px 0 0 0;
+    }
+    
   }
  
 }
@@ -652,6 +1078,9 @@ button{
     color: #7E8292;
     margin-right: 17px;
     white-space: nowrap;
+    @include for-md(){
+      margin-right: 10px;
+    }
   }
   img{
     max-width: 93px;
@@ -660,13 +1089,36 @@ button{
   }
 }
 .form{
+  &__container{
+    padding: 0 40px;
+    box-sizing: border-box;
+    @include for-sm(){
+      padding: 0;
+    }
+  }
+  &__pretitle{
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 8px;
+    color: #7E8292;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
   &__title{
     color: $white;
     font-size: 22px;
     line-height: 30px;
-    color: $white;
     margin-bottom: 32px;
+    &--big{
+      font-size: 30px;
+      line-height: 36px;
+    }
+    &--dark{
+      color: #03050C;
+    }
   }
+
+  
   &__item{
     position: relative;
 
@@ -684,7 +1136,8 @@ button{
     transition: linear .3s;
     background-color: transparent;
     box-sizing: border-box;
-
+   
+  
     &:focus,&:not(:placeholder-shown){
       ~ .form__label{
         font-size: 12px;
@@ -698,6 +1151,22 @@ button{
     &:focus{
       border-color: $white;
       border-bottom-color: $orange;
+    }
+    &--dark{
+      border-color: #E4E5E8;
+      &:focus,&:not(:placeholder-shown){
+        ~ .form__label{
+        
+          background-color: $white;
+         
+        
+  
+        }
+      }
+      &:focus{
+        border-color: #E4E5E8;
+        border-bottom-color: $orange;
+      }
     }
   }
   &__label{
@@ -713,9 +1182,18 @@ button{
     &-req{
       color: $orange;
     }
+    &--dark{
+      color: #7E8292;
+    }
   }
   &__checkbox{
     margin: 43px 0;
+    @include for-md(){
+      margin: 43px 0 35px;
+    }
+    @include for-sm(){
+      margin: 38px 0 31px;
+    }
   }
   &__button{
     display: block;
@@ -730,6 +1208,7 @@ button{
     cursor: pointer;
     box-sizing: border-box;
     padding-left: 28px;
+    display: block;
     svg{
       opacity: 0;
       transition: .3s;
@@ -739,7 +1218,14 @@ button{
     }
 
   }
-  
+  &--dark{
+    .checkbox__icon{
+      border-color: #E4E5E8;
+    }
+    .checkbox__text{
+      color: #7E8292;
+    }
+  }
   &__icon{
     position: absolute;
     left: 0;
@@ -825,6 +1311,10 @@ button{
     .main-menu__close{
       opacity: 1;
       left: 75px;
+      @include for-sm(){
+        right: 14px;
+        left: auto;
+      }
     }
   }
   &__close{
@@ -836,7 +1326,11 @@ button{
     z-index: 5100;
     cursor: pointer;
     opacity: 0;
-    transition: .3s;
+    transition: opacity .3s;
+    @include for-sm(){
+      left: auto;
+    }
+   
     svg{
       height: 100%;
       width: 100%;
@@ -872,6 +1366,10 @@ button{
     transform: translateX(-100%);
     opacity: 0;
     transition:linear .3s;
+    @include for-md(){
+      width: 70%;
+      min-width: 320px;
+    }
   }
   &__list{
     padding: 0;
@@ -883,6 +1381,9 @@ button{
     padding: 50px 20px 50px 75px;
     box-sizing: border-box;
     list-style: none;
+    @include for-sm(){
+      padding: 100px 10px 50px;
+    }
   }
 
   &__item + &__item{
@@ -898,9 +1399,16 @@ button{
     
     box-sizing: border-box;
     transition: .3s;
+    @include for-sm(){
+      font-size: 20px;
+      line-height: 24px;
+    }
     &:hover{
       padding-left: 75px;
       color: $black;
+      @include for-sm(){
+        padding: 0;
+      }
       &:before{
         width: 50px;
       }
@@ -915,6 +1423,9 @@ button{
       top: 50%;
       margin-top: -1.5px;
       transition: .3s;
+      @include for-sm(){
+        display: none;
+      }
     }
   }
 }
@@ -938,7 +1449,7 @@ button{
 .arcticmodal-container_i { height: 100%; margin: 0 auto; width:100%; }
 .arcticmodal-container_i2 { padding: 24px; margin: 0; border: 0; vertical-align: middle;
     @include for-tiny-tablet(){
-        padding: 10px;
+        padding: 0;
     }
  }
 .arcticmodal-error { padding: 20px;  border-radius: 10px; background: #000; color: #fff; }
@@ -949,9 +1460,75 @@ button{
 }
 .modal-content{
   background-color: $white;
+  padding-top: 37px;
+  position: relative;
+  @include for-sm(){
+    padding: 37px 10px 40px;
+  }
+  &__close{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    right: 20px;
+    top: 20px;
+    svg{
+      height: 100%;
+      width: 100%;
+      fill: #7E8292;
+    }
+  }
 }
 .arcticmodal-overlay{
   background: url(../images/bg.jpg)  center center no-repeat !important;
   background-size:cover;
   opacity: 1 !important;
+  &:hover{
+    &:before,&:after{
+      width: 0;
+    }
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: rgba($black, 1);
+    transition:linear .6s;
+
+
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    right: 0;
+    background-color: rgba($black, 1);
+    transition:linear .6s;
+
+
+  }
+}
+.mobile-buttons{
+  display: none;
+  @include for-md(){
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 61px;
+  }
+
+  &__row{
+    height: 100%;
+    .button{
+      // height: 100%;
+      width: 50%;
+    }
+  }
 }

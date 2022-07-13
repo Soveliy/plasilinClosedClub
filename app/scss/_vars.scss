@@ -55,7 +55,7 @@ $resolution2: 320;
     @media (max-width: 850px) { @content; }
   }
   @mixin for-sm {
-    @media (max-width: 768px) { @content; }
+    @media (max-width: 767px) { @content; }
   }
   @mixin for-tiny-tablet {
     @media (max-width: 650px) { @content; }

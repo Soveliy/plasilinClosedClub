@@ -33,7 +33,7 @@ gulp.task('css', function(){
     //  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
    
     // 'node_modules/jquery-nice-select/css/nice-select.css',
-    // 'node_modules/swiper/swiper.min.css',
+    'node_modules/swiper/swiper.min.css',
     // 'assest/css/simple-scrollbar.css',
     // 'assest/css/simple-scrollbar.css',
 
@@ -72,7 +72,7 @@ gulp.task('js', function(){
       
     'assest/js/jquery.liMarquee.js',
     // 'assest/js/swiper.js',
-        // 'node_modules/swiper/swiper-bundle.min.js',
+        'node_modules/swiper/swiper-bundle.min.js',
     // 'assest/js/jquery.simplemarquee.js',
     // 'assest/js/mmenu.js',
     // 'assest/js/slick.js',

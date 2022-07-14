@@ -63,9 +63,9 @@
             <div class="hero">
                 <div class="container">
                     <div class="section-head">
-                        <h1 class="section-head__title section-head__title--main">
-                            <span>ПЛАСТИЛИН-АРТ</span>
-                            закрытый партнерский клуб
+                        <h1 class="section-head__title section-head__title--main wow fadeIn " data-animation-frame>
+                            <span class="section-head__title-block" data-split-text>ПЛАСТИЛИН-АРТ</span>
+                            <span data-split-text>закрытый партнерский клуб</span>
                         </h1>
 
                     </div>
@@ -86,8 +86,8 @@
             <section class="privilege">
                 <div class="container">
                     <div class="privilege__section-head section-head section-head--white">
-                        <h2 class="section-head__title section-head__title--medium section-head__title--white">
-                            ВАШИ ПРИВИЛЕГИИ
+                        <h2 class="wow section-head__title section-head__title--medium section-head__title--white" data-animation-frame>
+                            <span data-split-text>ВАШИ ПРИВИЛЕГИИ</span>
                         </h2>
                     </div>
                     <div class="privilege__common common swiper-container">
@@ -134,16 +134,31 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="common__col">
+                                <svg class="privilege__svg" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1920 500">
+                                    <defs>
+                                        <clipPath id="clip-0">
+                                            <circle cx="0" cy="0" r="30px"></circle>
+                                        </clipPath>
+                                    </defs>
+                                    <g clip-path="url(#clip-0)">
+                                        <image preserveAspectRatio="xMinYMin slice" xlink:href="images/bg.jpg"></image>
+                                    </g>
+                                </svg>
+                            </div>
+                            
                         </div>
                     </div>
+                   
                 </div>
+               
             </section>
              <!--end privilege-->
              <section class="who-can">
                 <div class="container">
                     <div class="who-can__section-head section-head">
-                        <h2 class="section-head__title section-head__title--medium">
-                            КТО МОЖЕТ СТАТЬ <span>ПАРТНЕРОМ</span>?
+                        <h2 class="section-head__title section-head__title--medium" data-animation-frame>
+                            <span data-split-text>КТО МОЖЕТ СТАТЬ</span> <span class="orange" data-split-text>ПАРТНЕРОМ</span><span data-split-text>?</span>
                         </h2>
                     </div>
                     <div class="who-can__common common swiper-container">
@@ -241,8 +256,9 @@
             <section class="services">
                 <div class="container">
                     <div class="services__section-head section-head">
-                        <h2 class="section-head__title section-head__title--medium">
-                            НАШИ <span>УСЛУГИ</span>
+                        <h2 class="section-head__title section-head__title--medium" data-animation-frame>
+                           
+                            <span data-split-text> НАШИ <span class="orange">УСЛУГИ</span></span>
                         </h2>
                         <div class="section-head__desc">
                             Мы&nbsp;являемся золотым партнером <a href="#">1С-Битрикс</a> и&nbsp;<a href="#">Битрикс24</a>. <br> Обладаем всеми необходимыми компетенциями для решения задач различной сложности
@@ -373,8 +389,8 @@
              <section class="profit">
                 <div class="container">
                     <div class="profit__section-head section-head section-head--white">
-                        <h2 class="section-head__title section-head__title--medium section-head__title--white">
-                            ВАШ ЗАРАБОТОК
+                        <h2 class="section-head__title section-head__title--medium section-head__title--white" data-animation-frame>
+                            <span data-split-text>ВАШ ЗАРАБОТОК</span>
                         </h2>
                         <div class="section-head__desc section-head__desc--white">
                             Прибыль с одного приведенного клиента по программе
@@ -562,13 +578,18 @@
                     </div>
              </section>
              <!--end profit-->
+         
+            
+             
+         
         </main>
         <footer class="footer">
             <div class="container">
                 <div class="footer__section-head section-head section-head--white">
                     <div class="section-head__left">
-                        <h2 class="section-head__title section-head__title--medium section-head__title--white">
-                            ОСТАЛИСЬ <span>ВОПРОСЫ</span>?
+                        <h2 class="section-head__title section-head__title--medium section-head__title--white" data-animation-frame>
+                            
+                            <span data-split-text>ОСТАЛИСЬ <span class="orange">ВОПРОСЫ</span>?</span>
                         </h2>
                             <div class="footer__desktop">
                                 <div class="footer__items">
@@ -672,6 +693,7 @@
                 </div>
             </div>
         </footer>
+        <div class="cursor"></div>
         <div class="mobile-buttons">
             <div class="mobile-buttons__row row">
                 <button class="button button--orange js-partner">СТАТЬ ПАРТНЕРОМ</button>

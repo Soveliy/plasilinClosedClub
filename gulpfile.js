@@ -34,6 +34,7 @@ gulp.task('css', function(){
    
     // 'node_modules/jquery-nice-select/css/nice-select.css',
     'node_modules/swiper/swiper.min.css',
+    'node_modules/kursor/dist/kursor.css',
     // 'assest/css/simple-scrollbar.css',
     // 'assest/css/simple-scrollbar.css',
 
@@ -73,6 +74,12 @@ gulp.task('js', function(){
     'assest/js/jquery.liMarquee.js',
     // 'assest/js/swiper.js',
         'node_modules/swiper/swiper-bundle.min.js',
+        'node_modules/wowjs/dist/wow.js',
+        // 'node_modules/gsap/dist/gsap.js',
+        // 'node_modules/gsap/dist/TextPlugin.js',
+        
+        'assest/js/kursor.js',
+        // 'assest/js/SplitText.min.js',
     // 'assest/js/jquery.simplemarquee.js',
     // 'assest/js/mmenu.js',
     // 'assest/js/slick.js',

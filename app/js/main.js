@@ -11,7 +11,19 @@ $(document).ready(function(){
       // })
       var kursorx = new kursor({
         type: 4,
-      })
+      });
+      $("form").validate({
+        invalidHandler: function(event, validator) {
+            // 'this' refers to the form
+            var errors = validator.numberOfInvalids();
+            if (errors) {
+              $("div.form__error").show();
+            } else {
+              $("div.form__error").hide();
+            }
+          }
+      });
+      $(".form__input--number").mask("+7 (999) 999 - 99 - 99")
 
 $(".burger").click(function() {
     $(".main-menu").addClass("js-active")
@@ -19,6 +31,19 @@ $(".burger").click(function() {
 $(".main-menu__close,.main-menu__shadow").click(function() {
     $(".main-menu").removeClass("js-active")
 })
+
+$("body").on("mouseenter", ".b-modal", function(){
+  
+    $('.arcticmodal-overlay').addClass("js-active")
+})
+   
+$("body").on("mouseleave ", ".b-modal", function(){
+  
+    $('.arcticmodal-overlay').removeClass("js-active")
+})
+     
+    
+
 $(".js-partner").click(function(){
     $("#callback-modal").arcticmodal({
     //   afterOpen: function(data, el) {

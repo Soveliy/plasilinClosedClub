@@ -79,7 +79,7 @@ gulp.task('js', function(){
         // 'node_modules/gsap/dist/TextPlugin.js',
         
         'assest/js/kursor.js',
-        // 'assest/js/SplitText.min.js',
+        'assest/js/jquery.form.js',
     // 'assest/js/jquery.simplemarquee.js',
     // 'assest/js/mmenu.js',
     // 'assest/js/slick.js',

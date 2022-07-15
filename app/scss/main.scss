@@ -416,7 +416,7 @@ button{
         width: 150%;
       }
       img{
-        transform: rotate(12deg);
+        transform: rotate(12deg) translateY(97px);
       }
     }
     
@@ -606,6 +606,7 @@ button{
   position: relative;
   overflow: hidden;
   padding: 120px 0 120px;
+  z-index: 5;
   &:hover{
     .who-can__image{
       transform: rotate(0deg);
@@ -656,6 +657,7 @@ button{
   padding: 60px 20px;
   box-sizing: border-box;
   position: relative;
+  z-index: 5;
   overflow: hidden;
   &__item{
     img{
@@ -809,6 +811,7 @@ button{
 .profit{
    position: relative;
   overflow: hidden;
+  z-index: 10;
   background-color: $orange;
   padding: 114px 0;
   @include for-md(){
@@ -1164,6 +1167,8 @@ button{
 .footer{
   background-color: $black;
   padding-top: 128px;
+  position: relative;
+  z-index: 2;
   @include for-md(){
     padding-top: 119px;
   }

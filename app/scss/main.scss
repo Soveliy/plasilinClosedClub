@@ -1968,6 +1968,16 @@ span.letter.showLetter {
                 transform: translateY(0) translate3d(0, 0, 0);
     }
 }
+@keyframes fadeInLeft {
+  0% {
+              transform: translateX(-100%);
+              opacity: 0;
+  }
+  100% {
+              transform: translateX(0);
+              opacity: 1;
+  }
+}
 
 label.error{
   display: none !important;

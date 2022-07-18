@@ -59,14 +59,14 @@ $("body").on("mouseenter", ".privilege .common__col:not(.common__col--empty)", f
     }, 100);
   
 })
-// $("body").on("mouseleave", "[data-black-block]", function(){
-//     $('.burger').removeClass("white")
-//     $('.kursor').removeClass("white")
-// })
-// $("body").on("mouseenter", "[data-black-block]", function(){
-//     $('.burger').addClass("white")
-//     $('.kursor').addClass("white")
-// })   
+$("body").on("mouseleave", "[data-black-block]", function(){
+    $('.burger').removeClass("white")
+    $('.kursor').removeClass("white")
+})
+$("body").on("mouseenter", "[data-black-block]", function(){
+    $('.burger').addClass("white")
+    $('.kursor').addClass("white")
+})   
 
   document.addEventListener('DOMContentLoaded', function () {
     BackgroundCheck.init({

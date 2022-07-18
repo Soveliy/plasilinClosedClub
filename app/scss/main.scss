@@ -1993,7 +1993,7 @@ label.error{
   height: 80px !important;
   width: 80px !important;
   &.white{
-    border-color: $white;
+    border-color: $white !important;
   }
   &.bg{
     display: none;

@@ -694,6 +694,7 @@ button{
     top: 233px;
     transform: rotate(11deg);
     transition: linear .6s;
+    transition-delay: .3s;
     
     @include for-md(){
       top: auto;

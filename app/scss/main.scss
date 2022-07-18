@@ -86,6 +86,10 @@ img{
   //   box-sizing: border-box;
   //   padding: 0 15px;
   // }
+  @include for-big(){
+    padding-left: 70px;
+    box-sizing: border-box;
+  }
   @include for-md(){
     padding: 0 20px 0 98px;
     box-sizing: border-box;
@@ -214,6 +218,9 @@ button{
     left: 3.7%;
     top: 32px;
     z-index: 500;
+    @include for-big(){
+      left: 5px;
+    }
     cursor: pointer;
     @include for-md(){
       left: 20px;
@@ -500,6 +507,10 @@ button{
       width: 100%;
       opacity: 0;
       letter-spacing: 2px;
+      @include for-big{
+        font-size: 45px;
+        line-height: 55px;
+      }
       &.fadeIn {
         opacity: 1;
       }
@@ -518,6 +529,10 @@ button{
        color: $orange;
       margin-bottom: -9px;
       display: block;
+      @include for-big{
+        font-size: 90px;
+        line-height: 110px;
+      }
       @include for-md(){
         letter-spacing: 2.01px;
         font-size: 53px;
@@ -540,6 +555,10 @@ button{
       letter-spacing: 2.28px;
       max-width: 565px;
       padding-bottom: 20px;
+      @include for-big(){
+        font-size: 53px;
+        line-height: 70px;
+      }
       @include for-md(){
         letter-spacing: 2.01px;
         font-size: 53px;

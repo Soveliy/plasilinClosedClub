@@ -4,7 +4,7 @@ $(document).ready(function(){
         duration: 15000,
         startVisible: true,
         duplicated: true,
-        pauseOnHover:true,
+        pauseOnHover:false,
       });
       // new Kursor({
       //   el: '.cursor'
@@ -42,7 +42,60 @@ $("body").on("mouseleave ", ".b-modal", function(){
     $('.arcticmodal-overlay').removeClass("js-active")
 })
      
+$("body").on("mouseenter", ".privilege", function(){
+  
+    $('.kursor').addClass("bg")
+})
+   
+$("body").on("mouseleave ", ".privilege", function(){
+  
+    $('.kursor').removeClass("bg")
+})
+      
+$("body").on("mouseenter", ".privilege .common__col:not(.common__col--empty)", function(){
+    setTimeout(() => {
+        $('.kursor').addClass("filter")
+        $(".privilege__svg").addClass("hidden")
+    }, 100);
+  
+})
+// $("body").on("mouseleave", "[data-black-block]", function(){
+//     $('.burger').removeClass("white")
+//     $('.kursor').removeClass("white")
+// })
+// $("body").on("mouseenter", "[data-black-block]", function(){
+//     $('.burger').addClass("white")
+//     $('.kursor').addClass("white")
+// })   
+
+  document.addEventListener('DOMContentLoaded', function () {
+    BackgroundCheck.init({
+      targets: '.burger'
+    });
+  });
+  
+$("body").on("mouseleave ", ".privilege .common__col:not(.common__col--empty)", function(){
+    // console.log("mouse")
+    setTimeout(() => {
+        $('.kursor').removeClass("filter")
+        $(".privilege__svg").removeClass("hidden")
+    }, 50);
+        
+ 
+   
+})
     
+var mouseTimer = null;
+$(".privilege").mousemove(function() {
+    clearTimeout(mouseTimer);
+    $(".privilege__svg").removeClass("privilege__svg--big")
+    mouseTimer = setTimeout(function () {
+        $(".privilege__svg").addClass("privilege__svg--big")
+    }, 5000);
+}).mouseleave(function() {
+    clearTimeout(mouseTimer);
+    $(".privilege__svg").removeClass("privilege__svg--big")
+});
 
 $(".js-partner").click(function(){
     $("#callback-modal").arcticmodal({
@@ -198,8 +251,13 @@ function Item(config) {
 }
 Item.prototype = {
     update: function update(c) {
+        // $('.kursorChild').css('background-position-y', c.y);
+        // $('.kursorChild').css('background-position-x', c.x);
+     
+     setTimeout(() => {
         this.clip.setAttribute('cx', c.x);
         this.clip.setAttribute('cy', c.y);
+     }, 125);
     },
     mouseMoveHandler: function mouseMoveHandler(e) {
         this.update(getCoordinates(e, this.svg));
@@ -217,5 +275,6 @@ Item.prototype = {
         clip: document.querySelector('#clip-'+index+' circle'),
     }));
   });
+
 
 

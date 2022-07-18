@@ -229,11 +229,15 @@ button{
 .logo{
   &__image{
     transition: .3s;
-    filter: grayscale(1);
+    fill:$black;
+    path{
+      transition: .3s;
+    }
   }
   &:hover{
     .logo__image{
-      filter: none;
+      .st0{fill:#1B398F;}
+      .st1{fill:#E55030;}
     }
   }
 }
@@ -424,6 +428,7 @@ button{
 }
 .section-head{
   position: relative;
+  z-index: 10;
   border-top: 2px solid $black;
   padding: 18px 0;
   display: flex;
@@ -552,9 +557,23 @@ button{
 
 .privilege{
   padding: 106px 0 119px;
-  background-color: $orange;
+
   position: relative;
   overflow: hidden;
+  &:before{
+    // mix-blend-mode: difference;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+   
+    display: block;
+    width: 100%;
+    height: 100%;
+    // mix-blend-mode: difference;
+    // pointer-events: none;
+  }
   .common__row{
     @include for-md-desktop(){
       transform:inherit;
@@ -562,27 +581,47 @@ button{
     
     
   }
-  .common__col:not(:last-child){
-    position: relative;
+  .common__col{
+   
     z-index: 10;
   }
+  &:hover{
+    circle{
+      display: block;
+    }
+  }
   &__svg{
+    // clip-path: url("#clip-0");
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
     left: 0;
+    // z-index: 500;
+    mix-blend-mode: multiply;
+    background-color: $orange;
+
+    &--big{
+      circle{
+        transform: scale(1.2) !important;
+      }
+    }
+
+    &.hidden{
+      circle{
+        display: none;
+      }
+    }
 
     circle{
+      display: none;
       transform-origin: 50% 50%;
-    transform: scale(0);
+    transform: scale(1);
     fill: #000;
     transition: transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    &:hover circle,&:hover image{
-      transform: scale(1);
-    }
+    
 
     image{
       height: 100%;
@@ -1594,7 +1633,11 @@ button{
       }
     }
   }
-
+  &.white{
+    .burger__item{
+      background-color: $white;
+    }
+  }
   &__item{
     transition: linear .3s;
     height: 2px;
@@ -1906,3 +1949,42 @@ span.letter.showLetter {
 label.error{
   display: none !important;
 }
+.kursor{
+  // mix-blend-mode: difference;
+  
+}
+.kursorChild {
+  display: none !important;
+ 
+}
+// .kursorChild.bg{
+//   background-image: url(../images/bg.jpg) !important;
+//   background-color: transparent !important;
+//   mix-blend-mode: multiply;
+//   background-repeat: no-repeat;
+// }
+// .kursor.bg{
+//   // display: none;
+ 
+// }
+.kursor{
+  height: 80px !important;
+  width: 80px !important;
+  &.white{
+    border-color: $white;
+  }
+  &.bg{
+    display: none;
+  }
+  &.filter{
+    mix-blend-mode: difference;
+    background-color: $white;
+    display: block;
+  }
+  
+}
+
+
+// .privilege__svg{
+//   display: none;
+// }

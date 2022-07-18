@@ -37,7 +37,8 @@ gulp.task('css', function(){
     'node_modules/kursor/dist/kursor.css',
     // 'assest/css/simple-scrollbar.css',
     // 'assest/css/simple-scrollbar.css',
-
+      'assest/css/animate.min.css',
+    
     // 'assest/css/mmenu.css',
     // 'assest/css/mmenu.css',
     // 'assest/css/aos.css',

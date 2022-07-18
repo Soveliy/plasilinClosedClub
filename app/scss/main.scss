@@ -1597,7 +1597,7 @@ button{
       width: 100%;
       fill: $white;
       left: 0;
-      top: 0;
+      // top: 0;
     }
 
   }
@@ -2011,3 +2011,9 @@ label.error{
 // .privilege__svg{
 //   display: none;
 // }
+
+.animate{
+  &__fadeInLeft {
+    transition: .5s;
+  }
+}

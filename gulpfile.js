@@ -81,6 +81,8 @@ gulp.task('js', function(){
         'assest/js/kursor.js',
         'assest/js/jquery.form.js',
         'assest/js/background-check.min.js',
+          'assest/js/jquery.spincrement.min.js',
+        
     // 'assest/js/mmenu.js',
     // 'assest/js/slick.js',
     // 'assest/js/dotdotdot.js',

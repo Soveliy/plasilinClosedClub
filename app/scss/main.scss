@@ -499,6 +499,7 @@ button{
       padding-bottom: 25px;
       width: 100%;
       opacity: 0;
+      letter-spacing: 2px;
       &.fadeIn {
         opacity: 1;
       }
@@ -513,7 +514,7 @@ button{
         
        font-size: 124px;
        line-height: 127px;
-       letter-spacing: 4.71px; 
+       letter-spacing: 6.41px;
        color: $orange;
       margin-bottom: -9px;
       display: block;

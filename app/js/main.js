@@ -1,5 +1,28 @@
 
 $(document).ready(function(){
+  
+    // $('.main-menu a[href^="#"]').click(function(){ 
+    //     let anchor = $(this).attr('href');  
+    //     window.location.hash = '';
+    //     $(".main-menu").removeClass("js-active")
+    //     $('html, body').animate({           
+    //     scrollTop:  $(anchor).offset().top  
+    //     }, 1000);      
+    //     if(history.pushState) { history.pushState({}, null, window.location.pathname); }                      
+    //     });
+
+    $('.main-menu a[href^="#"]').on('click', function(e) { // Если ссылка является якорем, то выполняем следующее:
+        let link = $(this).attr('href'), // берём ссылку якоря. Она же по факту id элемента
+            el = $(document).find(link); // ищем элемент
+            $(".main-menu").removeClass("js-active")
+        if(el.length > 0) { // если он существует
+          el = el.eq(0).offset().top; // берём ПЕРВЫЙ элемент
+          $('html, body').animate({
+            scrollTop: el+'px' // выполняем к нему скролл
+          }, 1000, 'linear');
+        }
+        return false; // Отменяем переход по ссылке => и вывод якоря в адресную строку
+      });
     $('#marquee').marquee({
         duration: 15000,
         startVisible: true,
@@ -12,17 +35,20 @@ $(document).ready(function(){
       var kursorx = new kursor({
         type: 4,
       });
-      $("form").validate({
-        invalidHandler: function(event, validator) {
-            // 'this' refers to the form
-            var errors = validator.numberOfInvalids();
-            if (errors) {
-              $("div.form__error").show();
-            } else {
-              $("div.form__error").hide();
-            }
-          }
+      $("form").each(function(  ) {
+        $(this).validate({
+            invalidHandler: function(event, validator) {
+                // 'this' refers to the form
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                  $("div.form__error").show();
+                } else {
+                  $("div.form__error").hide();
+                }
+              }
+          });
       });
+     
       $(".form__input--number").mask("+7 (999) 999 - 99 - 99")
 
 $(".burger").click(function() {

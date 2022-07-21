@@ -428,6 +428,9 @@ button{
       }
       img{
         transform: rotate(12deg) translateY(97px);
+        @include for-md(){
+          transform: rotate(12deg) translateY(0);
+        }
       }
     }
     
@@ -582,6 +585,9 @@ button{
 
   position: relative;
   overflow: hidden;
+  @include for-md(){
+    background-color: $orange;
+  }
   &:before{
     // mix-blend-mode: difference;
     content: '';
@@ -626,6 +632,9 @@ button{
     // z-index: 500;
     mix-blend-mode: multiply;
     background-color: $orange;
+    @include for-md(){
+      display: none;
+    }
 
     &--big{
       circle{
@@ -675,6 +684,9 @@ button{
   &:hover{
     .who-can__image{
       transform: rotate(0deg);
+      @include for-sm(){
+        transform: rotate(0) translateX(20px);
+      }
     }
   }
   @include for-md(){
@@ -1084,6 +1096,12 @@ button{
     transform: translate(-50%,-50%);
     transition: .3s;
     transition-delay:.3s ;
+    @include for-md(){
+      max-width: 18px;
+    }
+    @include for-sm(){
+      max-width: 13px;
+    }
   }
   &__item{
     position: relative;
@@ -1150,6 +1168,10 @@ button{
     .bowling__ball{
       img{
         transform: translateX(250%) rotate(360deg);
+        @include for-sm(){
+          transform: translateX(73%) rotate(360deg);
+        
+        }
       }
     }
     .bowling__items:after{
@@ -1157,78 +1179,217 @@ button{
     }
     .bowling__item--1{
       transform: rotate(9deg) translate(59px, -147px);
+      @include for-md(){
+        transform: rotate(4deg) translate(25px, -72px);
+      }
+      @include for-sm(){
+        transform: rotate(8deg) translate(22px, -52px);
+      }
     }
     .bowling__item--2{
       transform: rotate(15deg) translate(63px, -124px);
+      @include for-md(){
+        transform: rotate(13deg) translate(26px, -58px);
+      }
+      @include for-sm(){
+        transform: rotate(13deg) translate(25px, -38px)
+      }
     }
     .bowling__item--3{
       transform: rotate(37deg) translate(45px, -71px);
+      @include for-md(){
+        transform: rotate(24deg) translate(13px, -34px);
+      }
+      @include for-sm(){
+        transform: rotate(29deg) translate(27px, -20px);
+
+      }
     }
     .bowling__item--4{
       transform: rotate(21deg) translate(4px, -2px);
+      @include for-md(){
+        transform: rotate(15deg) translate(-8px, -4px);
+      }
+      @include for-sm(){
+        transform: rotate(23deg) translate(-4px, 0px);
+      }
     }
     .bowling__item--5{
       transform: rotate(28deg) translate(72px, -57px);
+      @include for-md(){
+        transform: rotate(17deg) translate(23px, -16px);
+      }
+      @include for-sm(){
+        transform: rotate(24deg) translate(14px, -13px);
+      }
     }
     .bowling__decor--1{
       transform: translate(-434px, -392px) rotate(69deg);
+      @include for-md(){
+        transform: translate(-208px, -195px) rotate(69deg);
+      }
+      @include for-sm(){
+        transform: translate(-135px, -104px) rotate(69deg);
+      }
     }
     .bowling__decor--2{
       transform: translate(-360px, -328px) rotate(-104deg);
+      @include for-md(){
+        transform: translate(-171px, -165px) rotate(-104deg);
+      }
+      @include for-sm(){
+        transform: translate(-111px, -78px) rotate(-104deg);
+      }
     }
     .bowling__decor--3{
       transform:translate(-432px, -222px) rotate(-88deg);
+      @include for-md(){
+        transform: translate(-213px, -116px) rotate(-82deg)
+      }
+      @include for-sm(){
+        transform: translate(-139px, -47px) rotate(-82deg)
+      }
     }
     .bowling__decor--4{
       transform:translate(-282px, -204px) rotate(-45deg);
+      @include for-md(){
+        transform: translate(-135px, -104px) rotate(-45deg);
+        
+      }
+      @include for-sm(){
+        transform: translate(-92px, -137px) rotate(-45deg);
+      }
     }
     .bowling__decor--5{
       transform:translate(-442px, -524px) rotate(-72deg);
+      @include for-md(){
+        transform: translate(-226px, -262px) rotate(-72deg);
+      }
+      @include for-sm(){
+        transform: translate(-138px, -144px) rotate(-72deg);
+      }
     }
     .bowling__decor--6{
       transform:translate(-222px, -355px) rotate(0);
+      @include for-md(){
+        transform: translate(-107px, -180px) rotate(0);
+   
+      }
+      @include for-sm(){
+        display: none;
+      }
     }
     .bowling__decor--7{
       transform:translate(-294px, -492px) rotate(0);
+      @include for-md(){
+        transform: translate(-145px, -249px) rotate(0);
+      }
+      @include for-sm(){
+        transform: translate(-1px, -126px) rotate(0);
+      }
     }
     .bowling__decor--8{
       transform:translate(-68px, -376px) rotate(-15deg);
+      @include for-md(){
+        transform: translate(-39px, -195px) rotate(-15deg)
+      }
+      @include for-sm(){
+        transform: translate(7px, -161px) rotate(8deg);
+      }
     }
     .bowling__decor--9{
       transform:translate(-163px, -488px) rotate(-53deg);
+      @include for-md(){
+        transform: translate(-76px, -241px) rotate(-53deg);
+      }
+      @include for-sm(){
+        transform: translate(-44px, -130px) rotate(-53deg);
+      }
     }
     .bowling__decor--10{
       transform:translate(-28px, -457px);
+      @include for-md(){
+        transform: translate(-14px, -228px);
+      }
+      @include for-sm(){
+        display: none;
+      }
     }
     .bowling__decor--11{
-      transform:translate(-4px, -567px);;
+      transform:translate(-4px, -567px);
+      @include for-md(){
+        transform: translate(-3px, -280px);
+      }
+      @include for-sm(){
+        transform: translate(-13px, -95px) rotate(-12deg)
+      }
     }
     .bowling__decor--12{
       transform:translate(143px, -516px) rotate(35deg);
+      @include for-md(){
+        transform: translate(70px, -253px) rotate(35deg);
+      }
+      @include for-sm(){
+        transform: translate(35px, -63px) rotate(-45deg);
+      }
     }
     .bowling__decor--13{
       transform:translate(360px, -475px) rotate(44deg);
+      @include for-md(){
+        transform: translate(176px, -236px) rotate(44deg);
+      }
+      @include for-sm(){
+        transform: translate(77px, -71px) rotate(44deg);
+      }
     }
     .bowling__decor--14{
       // transform:translate(360px, -475px) rotate(44deg);
+      @include for-md(){
+        transform: translate(37px, -221px);
+      }
+      @include for-sm(){
+        transform: translate(30px, -120px);
+        max-height: 20px;
+      }
     }
     .bowling__decor--15{
       transform:translate(265px, -394px) rotate(0);
+      @include for-md(){
+        transform: translate(126px, -199px) rotate(0);
+      }
+      @include for-sm(){
+        transform: translate(98px, -102px) rotate(0);
+      }
     }
     .bowling__decor--16{
       transform:translate(178px, -285px)  rotate(0);
     }
     .bowling__decor--17{
       transform:translate(82px, -268px) rotate(79deg);
+      @include for-md(){
+        transform: translate(40px, -135px) rotate(79deg)
+      }
     }
     .bowling__decor--18{
       transform:translate(270px, -193px) rotate(146deg);
+      @include for-md(){
+        display: none;
+      }
     }
     .bowling__decor--19{
       transform:translate(360px, -247px);
+      @include for-md(){
+        transform: translate(172px, -127px);
+      }
     }
     .bowling__decor--20{
       transform:translate(444px, -373px);
+      @include for-md(){
+        transform: translate(129px,-101px) rotate(54deg);
+      }
+      @include for-sm(){
+        transform: translate(98px, -40px) rotate(54deg);
+      }
     }
 
   }
@@ -1765,6 +1926,9 @@ button{
     @include for-md(){
       width: 70%;
       min-width: 320px;
+    }
+    @include for-sm(){
+      width: 100%;
     }
   }
   &__list{

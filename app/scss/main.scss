@@ -464,7 +464,9 @@ button{
     line-height: 34px;
     max-width: 748px;
     padding-top: 13px;
+    margin-left: 20px;
     @include for-md(){
+      margin-left: 0;
       padding-top: 34px;
     }
 
@@ -597,6 +599,10 @@ button{
   .common__row{
     @include for-md-desktop(){
       transform:inherit;
+    }
+    @include for-sm(){
+      position: relative;
+      z-index: 50;
     }
     
     
@@ -757,7 +763,7 @@ button{
   }
 
   &__col{
- 
+    height:auto;
     padding: 1px;
     box-sizing: border-box;
 
@@ -857,6 +863,7 @@ button{
       width: 92px;
       @include for-sm(){
         position: static;
+        margin-top: 20px;
       }
     }
     &__body{
@@ -910,7 +917,9 @@ button{
   padding: 23px 30px;
   box-sizing: border-box;
   min-height: 377px;
+  height:100%;
   @include for-sm(){
+   
     min-height: 318px;
     padding: 23px 20px;
   }
@@ -948,7 +957,7 @@ button{
     font-weight: 300;
     padding-top: 74px;
     margin-top: auto;
-    @include for-sm(){
+    @include for-big(){
       font-size:45px;
       line-height:50px;
     }

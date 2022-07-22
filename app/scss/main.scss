@@ -72,7 +72,7 @@ img{
 .wrapper{
     position: relative;
     flex-direction: column;
-   
+   overflow: hidden;
     display: flex;
     width: 100%;
 }
@@ -457,7 +457,9 @@ button{
     max-width: 620px;
     width: 100%;
     margin-top: 14px;
+    margin-left: 20px;
     @include for-md(){
+      margin-left: 0;
       margin-top: 38px;
       max-width: 100%;
     }
@@ -685,7 +687,7 @@ button{
     .who-can__image{
       transform: rotate(0deg);
       @include for-sm(){
-        transform: rotate(0) translateX(20px);
+        transform: rotate(0) translateX(50px);
       }
     }
   }
@@ -713,7 +715,10 @@ button{
     transform: rotate(11deg);
     transition: linear .6s;
     transition-delay: .3s;
-    
+    @include for-big(){
+      right: -350px;
+      top: 133px;
+    }
     @include for-md(){
       top: auto;
       bottom: -73px;
@@ -723,7 +728,7 @@ button{
       transform: rotate(-13deg);
     }
     @include for-sm(){
-      max-width: 100%;
+      max-width: 350px;
       bottom: 3px;
       right: -59px;
     }
@@ -930,6 +935,9 @@ button{
   box-sizing: border-box;
   min-height: 377px;
   height:100%;
+  @include content-active-1400(){
+    padding: 23px 15px;
+  }
   @include for-sm(){
    
     min-height: 318px;
@@ -956,6 +964,10 @@ button{
     font-size: 30px;
     line-height: 36px;
     margin-bottom: 17px;
+    @include content-active-1400(){
+      font-size: 25px;
+      line-height: 30px;
+    }
   }
   &__desc{
     line-height: 22px;
@@ -1055,8 +1067,8 @@ button{
     &:before{
       content: '';
       position: absolute;
-      left: 0;
-      bottom: 0;
+      left: -1px;
+      bottom: -1px;
       height: 252px;
       width: 252px;
       background-color: $orange;

@@ -1,6 +1,24 @@
 
+
+
 $(document).ready(function(){
-  
+    $pl01 = $('#pl01'),
+    $pl02 = $('#pl02'),
+    $pl03 = $('#pl03'),
+    $pl04 = $('#pl04'),
+    $pl05 = $('#pl05'),
+    $pl06 = $('#pl06'),
+    tlPrl = new TimelineMax({repeat:-1}); 
+    tlPrl
+							.to($pl01, .25, {morphSVG:"#pl02"}, "+=.25")
+							.to($pl01, .25, {morphSVG:"#pl03"}, "+=.25")
+							.to($pl01, .25, {morphSVG:"#pl04"}, "+=.25")
+							.to($pl01, .25, {morphSVG:"#pl05"}, "+=.25")
+                            .to($pl01, .25, {morphSVG:"#pl06"}, "+=.25")
+							// .to($pl01, .25, {morphSVG:$pl01}, "+=.25");      
+                                
+                            
+  let isOpenModal = false;
     // $('.main-menu a[href^="#"]').click(function(){ 
     //     let anchor = $(this).attr('href');  
     //     window.location.hash = '';
@@ -11,7 +29,42 @@ $(document).ready(function(){
     //     if(history.pushState) { history.pushState({}, null, window.location.pathname); }                      
     //     });
 
-    $('.main-menu a[href^="#"]').on('click', function(e) { // Если ссылка является якорем, то выполняем следующее:
+    //
+    $('.form').on('submit', function(e) {
+        if ($(this).find('input[name=email]').val() && $(this).find('input[name=fax]').val() && $(this).find('input[name=policy]').is(':checked')) {
+            let post_data = {
+                'name': $(this).find('input[name=name]').val(),
+                'email': $(this).find('input[name=email]').val(),
+                'phone': $(this).find('input[name=phone]').val(),
+                'fax': $(this).find('input[name=fax]').val(),
+                'position': $(this).find('input[name=position]').val()
+            };
+            
+            $.ajax({
+                type: 'POST',
+                url: '/request.php',
+                data: post_data,
+                dataType: 'html',
+                success: function(msg){
+                    //console.log(msg);
+                    if(isOpenModal){
+                        $("#callback-modal").arcticmodal("close");
+                    }
+                    $("#callback-ok-modal").arcticmodal();
+                },
+                error: function () {
+                    console.log("ERROR ajax");
+                }
+            });
+        } else {
+            console.log('ERROR');
+        }
+
+        e.preventDefault();
+    });
+    //-
+
+    $('.main-menu a[href^="#"], .hero__link').on('click', function(e) { // Если ссылка является якорем, то выполняем следующее:
         let link = $(this).attr('href'), // берём ссылку якоря. Она же по факту id элемента
             el = $(document).find(link); // ищем элемент
             $(".main-menu").removeClass("js-active")
@@ -124,15 +177,11 @@ $(".privilege").mousemove(function() {
 });
 
 $(".js-partner").click(function(){
+    isOpenModal = true
     $("#callback-modal").arcticmodal({
-    //   afterOpen: function(data, el) {
-    //     $('body').css('overflow','hidden');
-    //   },
-    //   beforeClose: function(data, el) {
-    //    setTimeout(() => {
-    //     $('body').css('overflow','auto');
-    //    }, 100);
-    //   },
+        beforeClose: function(data, el) {
+            isOpenModal = false
+        },
     });
   });
   (function() {

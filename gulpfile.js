@@ -78,7 +78,8 @@ gulp.task('js', function(){
         'node_modules/wowjs/dist/wow.js',
         // 'node_modules/gsap/dist/gsap.js',
         // 'node_modules/gsap/dist/TextPlugin.js',
-        
+        'assest/js/TweenMax.js',
+        'assest/js/MorphSVGPlugin.min.js',
         'assest/js/kursor.js',
         'assest/js/jquery.form.js',
         'assest/js/background-check.min.js',

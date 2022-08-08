@@ -72,11 +72,10 @@ gulp.task('js', function(){
         'assest/js/jquery.arcticmodal.js',
         'assest/js/jquery.mask.min.js',
       
-    'assest/js/jquery.liMarquee.js',
-    // 'assest/js/swiper.js',
+        'assest/js/jquery.liMarquee.js',
+        // 'assest/js/swiper.js',
         'node_modules/swiper/swiper-bundle.min.js',
         'node_modules/wowjs/dist/wow.js',
-        // 'node_modules/gsap/dist/gsap.js',
         // 'node_modules/gsap/dist/TextPlugin.js',
         'assest/js/TweenMax.js',
         'assest/js/MorphSVGPlugin.min.js',

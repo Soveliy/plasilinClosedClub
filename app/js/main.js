@@ -1,6 +1,47 @@
 
 
 
+document.onreadystatechange = function(e)
+  {
+    if(document.readyState=="interactive")
+    {
+      var all = document.getElementsByTagName("*");
+      for (var i=0, max=all.length; i < max; i++) 
+      {
+        set_ele(all[i]);
+      }
+    }
+  }
+  
+  function check_element(ele)
+  {
+    var all = document.getElementsByTagName("*");
+    var totalele=all.length;
+    var per_inc=100/all.length;
+    
+    if($(ele).on())
+    {
+         
+      var prog_width=per_inc+Number(document.getElementById("progress__value").value);
+      document.getElementById("progress__value").value=prog_width;
+      $(".progress__bar").animate({width:prog_width+"%"},10,function(){
+        if(document.getElementById("progress__bar").style.width=="100%")
+        {
+        //   $(".preloader").fadeOut("slow");
+        }			
+      });
+    }
+  
+    else	
+    {
+      set_ele(ele);
+    }
+  }
+  
+  function set_ele(set_element)
+  {
+    check_element(set_element);
+  }
 $(document).ready(function(){
     $pl01 = $('#pl01'),
     $pl02 = $('#pl02'),
@@ -16,9 +57,11 @@ $(document).ready(function(){
 							.to($pl01, .25, {morphSVG:"#pl05"}, "+=.25")
                             .to($pl01, .25, {morphSVG:"#pl06"}, "+=.25")
 							// .to($pl01, .25, {morphSVG:$pl01}, "+=.25");      
-                                
-                            
+                                                    
+                    
   let isOpenModal = false;
+  
+
     // $('.main-menu a[href^="#"]').click(function(){ 
     //     let anchor = $(this).attr('href');  
     //     window.location.hash = '';

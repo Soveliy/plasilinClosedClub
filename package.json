@@ -33,6 +33,7 @@
         "jquery-nice-select": "^1.1.0",
         "kursor": "^0.1.6",
         "nouislider": "^15.5.1",
+        "progressbar.js": "^1.1.0",
         "slick-carousel": "^1.8.1",
         "swiper": "^8.0.6",
         "wowjs": "^1.1.3"

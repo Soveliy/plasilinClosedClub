@@ -8,17 +8,21 @@
     <title>Главная</title>
     <link rel="stylesheet" href="css/main.min.css">
 </head>
-<body>
+<body class="hidden">
     <div class="preloader">
         <div class="preloader__wrapper">
-            <div class='progress preloader__progress' id="progress_div">
+            <div class="preloader__progress-bar" id="progress__bar">
+                
+            </div>
+
+            <!-- <div class='progress preloader__progress' id="progress_div">
                 <div class='bar progress__bar' id='progress__bar'></div>
                 <div class='percent progress__pecrent' id='percent1'></div>
                 <input type="hidden" class="progress__value" id="progress__value" value="0">
-              </div>
+              </div> -->
 
 
-                     <svg width="130" height="131" viewBox="0 0 130 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <svg class="preloader__svg" width="130" height="131" viewBox="0 0 130 131" fill="none" xmlns="http://www.w3.org/2000/svg">
                     
                         <path class="preloader__item preloader__item--5" id="pl05" fill-rule="evenodd" clip-rule="evenodd" d="M78.241 92.109H73.241V96C73.008 95.987 72.774 95.962 72.541 95.962C63.2743 95.962 54.0077 95.962 44.741 95.962C44.528 95.962 44.316 95.985 44.104 95.997L44.104 92.111H32.041V87.384H23V56.048H32.041V52.148C32.741 52.167 33.441 52.202 34.141 52.204C36.077 52.213 38.012 52.204 39.988 52.204V48.383H48.077V44.622H57.055V39.888H61.164V36C63.34 36.0113 65.5163 36.0233 67.693 36.036C68.14 36.036 68.586 36.036 69.131 36.036V44.636H65.165V48.371H53.147V52.206H53.841C71.429 52.206 89.017 52.206 106.605 52.206C106.859 52.206 107.112 52.165 107.366 52.144V59.814H69.196V63.593H86.196V72.2H69.187V75.95H82.218V83.613H65.193V87.352H78.241V92.109Z" fill="#03050C"/>
                         <path class="preloader__item preloader__item--4" id="pl04" d="M117.554 39H11.528C10.8576 39.0003 10.2148 39.2667 9.74073 39.7407C9.26669 40.2148 9.00027 40.8576 9 41.528V91.471C9 92.1416 9.26631 92.7847 9.74037 93.2589C10.2144 93.7332 10.8574 93.9997 11.528 94H117.554C118.225 94 118.868 93.7336 119.342 93.2593C119.817 92.785 120.083 92.1417 120.083 91.471V41.528C120.083 40.8574 119.816 40.2144 119.342 39.7404C118.868 39.2663 118.225 39 117.554 39V39ZM43.743 55C42.858 57.891 38.727 65.087 35.728 70.485C32.729 75.883 33.819 82.699 33.819 82.699H22.7C22.4004 79.0247 23.0972 75.3376 24.717 72.026C27.443 66.205 35.71 60.841 37.017 59.664C39.007 57.864 37.481 56.911 36.553 57.672C35.3233 58.4453 33.9347 58.9308 32.491 59.092C30.497 59.1038 28.5094 58.8649 26.575 58.381C23.739 57.945 23.467 63.398 23.467 63.398H17.735V50.8H23.35V56.2C23.35 56.2 24.659 51.565 28.039 50.53C31.419 49.495 34.692 52.438 36.981 52.983C39.27 53.528 39.926 50.803 39.926 50.803H44.126C44.126 50.803 44.671 51.977 43.744 55.003L43.743 55ZM77.277 55.003C76.391 57.894 72.26 65.09 69.262 70.488C66.264 75.886 67.353 82.702 67.353 82.702H56.229C55.9298 79.0276 56.6269 75.3405 58.247 72.029C60.972 66.2 69.239 60.837 70.541 59.659C72.531 57.859 71.005 56.906 70.077 57.667C68.8476 58.4402 67.4593 58.9256 66.016 59.087C64.022 59.0988 62.0344 58.8599 60.1 58.376C57.265 57.94 56.992 63.393 56.992 63.393H51.267V50.8H56.883V56.2C56.883 56.2 58.191 51.565 61.572 50.53C64.953 49.495 68.224 52.438 70.514 52.983C72.804 53.528 73.458 50.803 73.458 50.803H77.658C77.658 50.803 78.203 51.977 77.277 55.003V55.003ZM110.809 55.003C109.924 57.894 105.793 65.09 102.794 70.488C99.795 75.886 100.885 82.702 100.885 82.702H89.761C89.4614 79.0277 90.1582 75.3406 91.778 72.029C94.5 66.2 102.771 60.837 104.074 59.659C106.064 57.859 104.538 56.906 103.61 57.667C102.38 58.4401 100.992 58.9255 99.548 59.087C97.554 59.0989 95.5664 58.86 93.632 58.376C90.796 57.94 90.524 63.393 90.524 63.393H84.8V50.8H90.416V56.2C90.416 56.2 91.725 51.565 95.105 50.53C98.485 49.495 101.757 52.438 104.047 52.983C106.337 53.528 106.99 50.8 106.99 50.8H111.19C111.19 50.8 111.735 51.974 110.808 55" fill="#03050C"/>
@@ -206,7 +210,11 @@
                             <a href="#privilege" class="hero__link link animate__fadeInLeft wow">Подробнее <span class="link__svg-container"><svg class="icon icon-Next-1"><use xlink:href="images/sprite.svg#icon-Next-1"></use></svg></span></a>
                         </div>
                         <div class="hero__picture-container">
-                            <img src="images/hand.png" alt="">
+                            <div class="hero__hand-container">
+                                <img class="hero__hand" src="images/hand.png" alt="">
+                            </div>
+                            
+                            <img class="hero__click" src="images/click-big.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -947,6 +955,56 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/libs.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        
+
+        $pl01 = $('#pl01'),
+            $pl02 = $('#pl02'),
+            $pl03 = $('#pl03'),
+            $pl04 = $('#pl04'),
+            $pl05 = $('#pl05'),
+            $pl06 = $('#pl06'),
+            tlPrl = new TimelineMax({repeat:-1}); 
+            tlPrl
+                                    .to($pl01, .25, {morphSVG:"#pl02"}, "+=.25")
+                                    .to($pl01, .25, {morphSVG:"#pl03"}, "+=.25")
+                                    .to($pl01, .25, {morphSVG:"#pl04"}, "+=.25")
+                                    .to($pl01, .25, {morphSVG:"#pl05"}, "+=.25")
+                                    .to($pl01, .25, {morphSVG:"#pl06"}, "+=.25")
+						  
+            let circle = new ProgressBar.Line('#progress__bar', {
+                color: '#03050C',
+                duration: 2000,
+                easing: 'easeInOut',
+                text: {
+                    value: '0',
+                    className: 'progress-text',
+                    style: {
+                    color: 'black',
+                    position: 'absolute',
+                    top: '30px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                    }
+                },
+                step: (state, shape) => {
+                
+                    shape.setText(Math.round(shape.value() * 100) + ' %');
+                }
+            });
+
+            circle.animate(1);
+            setTimeout(() => {
+                $("body").removeClass("hidden")
+                $(".preloader").fadeOut(300)
+            }, 2100);
+            setTimeout(() => {
+                tlPrl.pause();
+                $(".preloader").remove()
+            }, 15000);
+
+    </script>
   
     
 </body>

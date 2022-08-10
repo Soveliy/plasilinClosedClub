@@ -6,7 +6,8 @@ $Xolonium: 'Xolonium', 'sans-serif';
 $black:#03050C;
 $orange:#E55030;
 $greyBg:#F3F3F3;
-$light-black:#121930;
+// $light-black:#121930;
+$light-black:#03050C;
 $green:#83B752;
 $blue:#1C398E;
 html{
@@ -28,17 +29,47 @@ html{
   left: 0;
   top: 0;
   z-index: 9999;
-  background-color:#fff ;
+  background-color:#F3F3F3 ;
+  &:after{
+    top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  content: "";
+  position: absolute;
+  animation: c0226 1s steps(2) infinite;
+  background-image: url(../images/glitch.png);
+  background-position: 50%;
+  }
+  .progress-text{
+    font-size: 40px;
+    letter-spacing: 1.52px;
+    font-family: $Xolonium;
+  }
+  &__progress-bar{
+    max-width: 1516px;
+    width: 90%;
+    position: absolute !important;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    svg{
+      height: 2px;
+      background-color: rgba(#7E8292,.2);
+    }
+    
+  }
   &__wrapper{
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    svg{
-      height: 130px;
-      position: relative;
-    }
+   
+  }
+  &__ svg{
+    height: 130px;
+    position: relative;
   }
   &__item{
     position: absolute;
@@ -69,6 +100,9 @@ body{
     line-height: 17px;
     background-color: $greyBg;
     overflow-x: hidden;
+    &.hidden{
+      overflow: hidden;
+    }
 }
 input{
   appearance: none;
@@ -423,11 +457,13 @@ button{
       }
     }
   }
-  &__picture-container{
-    position: relative;
+  &__hand-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
     overflow: hidden;
-    width: 1004px;
-    height: 504px;
     &:before{
       content: '';
       position: absolute;
@@ -439,6 +475,13 @@ button{
       background-size: cover;
       transition: .3s;
     }
+  }
+  &__picture-container{
+    position: relative;
+   
+    width: 1004px;
+    height: 504px;
+    
     @include for-md(){
       margin-top: 34px;
       width: 100%;
@@ -448,7 +491,7 @@ button{
       height: 152px;
     }
 
-    img{
+    .hero__hand{
       position: relative;
       margin: 7px 0 0 -56px;
       transition: linear .6s;
@@ -460,16 +503,37 @@ button{
         max-width: 92%;
       }
     }
-
+    .hero__click{
+      position: absolute;
+      bottom: 10px;
+      right: -130px;
+      transition: linear .4s;
+      @include for-md(){
+        height: 154px;
+        width: 112px;
+        bottom: 0;
+        right: -60px;
+      }
+      @include for-sm(){
+        width: 88px;
+        height: 86px;
+        right: -56px;
+        bottom: -26px;
+      }
+    }
     &:hover{
-      &:before{
+      .hero__click{
+        transform: translate(-30px,-30px);
+      }
+      .hero__hand-container:before{
         width: 150%;
       }
-      img{
+      .hero__hand{
         transform: rotate(12deg) translateY(97px);
         @include for-md(){
           transform: rotate(12deg) translateY(0);
         }
+        
       }
     }
     
@@ -553,6 +617,9 @@ button{
       width: 100%;
       opacity: 0;
       letter-spacing: 2px;
+      .section-head__title-block + span{
+        font-weight: 400;
+      }
       @include for-big{
         font-size: 45px;
         line-height: 55px;
@@ -871,7 +938,8 @@ button{
     padding: 37px 100px 37px 0;
     box-sizing: border-box;
     position: relative;
-    border-bottom: 1px solid $black;
+    border-bottom: 2px solid $black;
+    cursor:pointer;
     @include for-md(){
       padding: 35px 0 32px;
     }

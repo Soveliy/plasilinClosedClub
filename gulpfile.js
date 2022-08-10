@@ -76,12 +76,12 @@ gulp.task('js', function(){
         // 'assest/js/swiper.js',
         'node_modules/swiper/swiper-bundle.min.js',
         'node_modules/wowjs/dist/wow.js',
+        'node_modules/progressbar.js/dist/progressbar.js',
         // 'node_modules/gsap/dist/TextPlugin.js',
         'assest/js/TweenMax.js',
         'assest/js/MorphSVGPlugin.min.js',
         'assest/js/kursor.js',
         'assest/js/jquery.form.js',
-        'assest/js/background-check.min.js',
           'assest/js/jquery.spincrement.min.js',
         
     // 'assest/js/mmenu.js',

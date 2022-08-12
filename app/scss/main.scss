@@ -18,7 +18,7 @@ html{
   width: 100%;
   &__bar{
     height: 10px;
-    background-color: red;
+    background-color: #fff;
     width: 0;
   }
 }
@@ -29,18 +29,9 @@ html{
   left: 0;
   top: 0;
   z-index: 9999;
-  background-color:#F3F3F3 ;
-  &:after{
-    top: -10rem;
-  left: -10rem;
-  width: calc(100% + 20rem);
-  height: calc(100% + 20rem);
-  content: "";
-  position: absolute;
-  animation: c0226 1s steps(2) infinite;
-  background-image: url(../images/glitch.png);
-  background-position: 50%;
-  }
+  background-color:#1B398F;
+  color:#fff;
+
   .progress-text{
     font-size: 40px;
     letter-spacing: 1.52px;
@@ -55,7 +46,7 @@ html{
     transform: translateX(-50%);
     svg{
       height: 2px;
-      background-color: rgba(#7E8292,.2);
+      background-color: rgba(#fff,.2);
     }
     
   }
@@ -67,8 +58,8 @@ html{
 
    
   }
-  &__ svg{
-    height: 130px;
+  &__svg{
+    height: 150px;
     position: relative;
   }
   &__item{
